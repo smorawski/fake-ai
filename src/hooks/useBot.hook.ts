@@ -53,9 +53,27 @@ export const useBot = (messagesParam?: Messages) => {
     messages.anythingElse
   );
 
+  const customGetFact = useCallback(
+    (question?: string) => {
+      if (!question) {
+        return getFact();
+      }
+
+      const customResponse = messages.custom.find(({ regexp }) =>
+        RegExp(regexp, "i").test(question)
+      );
+
+      if (customResponse) {
+        return customResponse.response;
+      }
+      return getFact();
+    },
+    [getFact, messages]
+  );
+
   return {
+    getFact: customGetFact,
     getHello,
-    getFact,
     getAnythingElse,
   };
 };

@@ -1,0 +1,19 @@
+{
+  "hello": [
+    "Hi, I am an AI. How can I help you?",
+    "Do you need a help from an AI? That's why I am here!",
+    "\"There are no stupid questions, only stupid answers\". Maybe we can try it out?"
+  ],
+  "facts": [
+    "A murder of crows is the collective noun for a group of crows.",
+    "<b>William Henry Gates III (born October 28, 1955)</b><br/> is an American businessman and philanthropist best known for co-founding the software company Microsoft with his childhood friend Paul Allen. He later held the positions of chairman, chief executive officer (CEO), president, and chief software architect of the company. Gates was also its largest individual shareholder until May 2014.[a] He was a pioneer of the microcomputer revolution of the 1970s and 1980s."
+  ],
+  "anythingElse": [
+    "Is there anything else I can help you with?",
+    "Any more questions?"
+  ],
+  "custom": [
+    { "regexp": "(\\W|^)who\\Ware\\Wyou", "response": "I am an AI!" },
+    { "regexp": "(\\W|^)fuck\\Wyou", "response": "No, fuck you" }
+  ]
+}

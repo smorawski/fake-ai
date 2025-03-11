@@ -17,24 +17,27 @@ function App() {
     addRobotMessage(getHello());
   }, []);
 
-  const onUserAction = useCallback(() => {
-    setTimeout(() => {
-      addRobotMessage(getFact());
-      addRobotMessage(getAnythingElse());
-
-      // meeeh timeout. Good enough
+  const onUserAction = useCallback(
+    (message?: string) => {
       setTimeout(() => {
-        if (chatRef.current) {
-          chatRef.current.scroll(0, chatRef.current.scrollHeight);
-        }
-      }, 200);
-    }, 2000);
-  }, [addRobotMessage, getFact, getAnythingElse]);
+        addRobotMessage(getFact(message));
+        addRobotMessage(getAnythingElse());
+
+        // meeeh timeout. Good enough
+        setTimeout(() => {
+          if (chatRef.current) {
+            chatRef.current.scroll(0, chatRef.current.scrollHeight);
+          }
+        }, 200);
+      }, 2000);
+    },
+    [addRobotMessage, getFact, getAnythingElse]
+  );
 
   const onMessageSend = useCallback(
     (message: string) => {
       addUserMessage(message);
-      onUserAction();
+      onUserAction(message);
     },
     [addUserMessage, onUserAction]
   );
