@@ -1,0 +1,69 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-container > * {
+  flex-basis: 100%;
+}
+
+.footer {
+  padding: 10px;
+  height: 200px;
+  display: flex;
+  flex-shrink: 3;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: end;
+}
+
+.footer > .avatar-container {
+  text-align: start;
+}
+
+.chat-container {
+  overflow-y: scroll;
+
+  scroll-behavior: smooth;
+}
+
+.chat-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.chat-container::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.chat-container::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 600px) {
+  .chat .chat-bubble,
+  .footer > .message-input-container {
+    width: 90% !important;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer .avatar {
+    width: 150px;
+    height: 150px;
+  }
+}

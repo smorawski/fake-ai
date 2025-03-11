@@ -1,0 +1,25 @@
+.chat {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat .chat-bubble,
+.footer > * {
+  width: 50%;
+}
+
+.chat .robot {
+  align-self: flex-end;
+}
+
+.chat .user,
+.chat .message-input {
+  align-self: flex-start;
+}
+
+.chat .avatar-container {
+  width: 100% !important;
+  text-align: end !important;
+}

@@ -1,0 +1,17 @@
+.chat-bubble {
+  position: relative;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px;
+  animation-name: appear;
+  animation-duration: 1s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
