@@ -2,3 +2,5 @@ node_modules
 src/resources/avatar.png
 src/resources/messages.json
 .vite
+dist
+deploy
